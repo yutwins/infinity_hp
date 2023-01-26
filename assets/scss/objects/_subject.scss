@@ -1,0 +1,163 @@
+@use "../foundation/global" as *;
+
+.subject {
+    background-color: $sub_color;
+
+    &-inner {
+        padding: 80px 0;
+        max-width: 98%;
+        
+        @include mq("tab") {
+            padding: 64px 0;
+        }
+        @include mq("sp") {
+            padding: 40px 0;
+            max-width: calc(100% - 40px);
+        }
+    }
+
+    &__note {
+        margin-top: 5px;
+        font-size: 20px;
+        font-weight: 500;
+        text-align: center;
+
+        @include mq("tab") {
+            font-size: 18px;
+        }
+        @include mq("sp") {
+            font-size: 12px;
+        }
+    }
+
+    &-ul {
+        margin-top: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px 6.5%;
+
+        @include mq("tab") {
+            gap: 30px 3.5%;
+        }
+        @include mq("sp") {
+            display: block;
+        }
+    }
+
+    &__list {
+        // width: 330px;
+        width: 28.9%;
+        height: auto;
+        border: 1px solid #000;
+        padding: 15px 20px;
+
+        @include mq("tab") {
+            width: 30%;
+            padding: 10px 12px;
+        }
+        @include mq("sp") {
+            width: 100%;
+            max-width: 330px;
+            margin: 0 auto;
+
+            @for $i from 2 through 5 {
+                &:nth-child(#{$i}) {
+                    margin-top: 15px;
+                }
+
+            }
+        }
+    }
+    &__listInner {
+        text-align: center;
+    }
+    &__listHead {
+        display: inline-block;
+        font-size: 26px;
+        font-weight: bold;
+        padding-left: 50px;
+        position: relative;
+
+        @include mq("tab") {
+            font-size: 22px;
+            padding-left: 42px;
+        }
+        @include mq("sp") {
+            font-size: 20px;
+            padding-left: 42px;
+        }
+    }
+    &__listHeadIcon {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+
+        @media (max-width: 1080px) {
+            width: 32px;
+            height: 32px;
+        }
+    }
+    &__listSubHead {
+        margin-top: 5px;
+        font-weight: bold;
+
+        @media (max-width: 1080px) {
+            margin-top: 3px;
+            font-size: 15px;
+        }
+    }
+    &__listText {
+        margin-top: 5px;
+        font-size: 12px;
+        font-weight: 500;
+
+        @include mq("sp") {
+            margin-top: 3px;
+            font-size: 10px;
+        }
+    }
+    &__listArrow {
+        width: 35px;
+        height: auto;
+        margin-top: 5px;
+
+        @include mq("sp") {
+            width: 26px;
+            margin-top: 3px;
+        }
+    }
+    &__listBtn {
+        display: grid;
+        place-items: center;
+        width: 100%;
+        height: auto;
+        padding: 12px 0;
+        background-color: $main_color;
+        box-shadow: 0 4px 4px rgba(#000, .25);
+        cursor: pointer;
+
+        @include mq("tab") {
+            padding: 10px 0;
+        }
+
+        &:hover {
+            box-shadow: none;
+            opacity: .8;
+        }
+
+        &--text {
+            font-size: 20px;
+            font-weight: bold;
+            color: #fff;
+
+            @include mq("tab") {
+                font-size: 16px;
+            }
+        }
+    }
+}

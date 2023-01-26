@@ -1,0 +1,145 @@
+@use "../foundation/global" as *;
+
+.MV {
+    width: 100%;
+    height: 655px;
+    margin-top: 75px;
+    position: relative;
+
+    @media (max-width: 850px) {
+        margin-top: 50px;
+    }
+    @include mq("sp") {
+        height: 400px;
+    }
+
+    &::before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: url(/assets/images/MV_bg.png) no-repeat center center / cover;
+        
+        @include mq("sp") {
+            background: url(/assets/images/MV_bg_sp.png) no-repeat center center / cover;
+        }
+    }
+
+    &-inner {
+        position: relative;
+        z-index: 2;
+        padding-top: 35px;
+        padding-right: 60px;
+
+        @include mq("sp") {
+            padding-top: 10px;
+            padding-right: 0;
+        }
+    }
+
+    &__head {
+        font-family: $SM;
+        font-weight: 900;
+        text-align: right;
+        color: $main_color;
+        font-size: 64px;
+
+        @include mq("tab") {
+            font-size: 48px;
+        }
+        @include mq("sp") {
+            font-size: 32px;
+            line-height: 1.4;
+            text-align: center;
+        }
+    }
+    
+    &__subHead {
+        max-width: 500px;
+        margin-left: auto;
+        font-family: $SM;
+        color: #fff;
+        font-size: 36px;
+
+        @include mq("tab") {
+            font-size: 28px;
+            max-width: 370px;
+        }
+        @include mq("sp") {
+            font-size: 16px;
+            text-align: center;
+            max-width: 350px;
+            margin: 8px auto 0;
+        }
+    }
+
+    &-circles {
+        max-width: 420px;
+        margin-left: auto;
+        margin-top: 84px;
+        display: flex;
+        gap: 6px;
+        position: relative;
+
+        @include mq("sp") {
+            margin-top: 80px;
+            margin-left: initial;
+            max-width: 100%;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+    }
+
+    &-circle {
+        border-radius: 50%;
+        background-color: $accent_color;
+        text-align: center;
+        color: $main_color;
+
+        &__text {
+            font-size: 20px;
+            font-weight: 500;
+
+            @include mq("sp") {
+                font-size: 10px;
+            }
+        }
+
+        &__title {
+            font-size: 32px;
+            font-weight: 900;
+
+            @include mq("sp") {
+                font-size: 16px;
+            }
+        }
+    }
+    &-circle01 {
+        width: 220px;
+        height: 220px;
+        padding-top: 52px;
+
+        @include mq("sp") {
+            width: 120px;
+            height: 120px;
+            padding-top: 30px;
+        }
+    }
+    &-circle02 {
+        width: 190px;
+        height: 190px;
+        margin-top: 50px;
+        padding-top: 40px;
+
+        @include mq("sp") {
+            width: 120px;
+            height: 120px;
+            margin-top: 0;
+            padding-top: 30px;
+        }
+    }
+}

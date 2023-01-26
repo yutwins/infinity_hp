@@ -15,10 +15,39 @@ $breakpoints: (
     }
 }
 
+.pc-only {
+    display: block;
+
+    @include mq("sp") {
+        display: none;
+    }
+}
+.sp-only {
+    display: none;
+
+    @include mq("sp") {
+        display: block;
+    }
+}
+
+.inner {
+    width: 1140px;
+    max-width: 100%;
+    margin: 0 auto;
+
+    @include mq("sp") {
+        max-width: calc(100% - 40px);
+    }
+}
+
 .line-btn {
     padding-top: 15px;
-    background-color: $accent_color;
+    background-color: $btn_color;
     text-align: center;
+
+    &:hover {
+        opacity: .8;
+    }
 
     @include mq("tab") {
         padding-top: 18px;
@@ -71,6 +100,10 @@ $breakpoints: (
     background-color: $main_color;
     text-align: center;
 
+    &:hover {
+        opacity: .8;
+    }
+
     &__num {
         display: inline-block;
         font-size: 26px;
@@ -96,5 +129,18 @@ $breakpoints: (
                 height: 20px;
             }
         }
+    }
+}
+
+.section__title {
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+
+    @include mq("tab") {
+        font-size: 40px;
+    }
+    @include mq("sp") {
+        font-size: 32px;
     }
 }

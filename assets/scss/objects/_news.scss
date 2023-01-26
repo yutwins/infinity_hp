@@ -1,0 +1,158 @@
+@use "../foundation/global" as *;
+
+.news {
+ 
+    &-inner {
+        
+        @include mq("sp") {
+            max-width: calc(100% - 40px);
+            margin: 0 auto;
+        }
+    }
+
+    &-items {
+        width: 900px;
+        max-width: 95%;
+        margin: 40px auto 0;
+
+        @include mq("sp") {
+            margin: 24px auto 0;
+            max-width: 100%;
+        }
+    }
+
+    &-item {
+        display: block;
+        width: 100%;
+        position: relative;
+        padding: 20px 0;
+        border-bottom: 1px solid $gray04_color;
+        cursor: pointer;
+
+        @include mq("tab") {
+            padding: 16px 0;
+        }
+
+        &:hover {
+            opacity: .7;
+
+            .news-item__arrow {
+                right: 25px;
+
+                @include mq("sp") {
+                    right: 10px;
+                }
+            }
+        }
+        
+        &__textArea {
+            width: 720px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 35px;
+
+            @include mq("tab") {
+                width: 650px;
+                gap: 24px;
+            }
+            @include mq("sp") {
+                display: block;
+                width: 80%;
+            }
+        }
+
+        &__date {
+            font-family: $PP;
+            font-size: 20px;
+            font-weight: bold;
+
+            @include mq("sp") {
+                font-size: 18px;
+            }
+        }
+    
+        &__title {
+    
+            @include mq("sp") {
+                font-size: 14px;
+            }
+        }
+
+        &__arrow {
+            width: 16px;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            right: 30px;
+            transform: translateY(-50%);
+            transition: all 0.3s ease 0s;
+
+            @include mq("sp") {
+                width: 13px;
+                right: 15px;
+            }
+        }
+
+    }
+
+    &__btn {
+        width: 300px;
+        height: 50px;
+        display: grid;
+        place-items: center;
+        margin: 45px auto 0;
+        background-color: $main_color;
+        box-shadow: 0 4px 4px rgba(#000, .25);
+
+        &:hover {
+            box-shadow: none;
+            opacity: .8;
+        }
+    }
+    &__btnText {
+        color: #fff;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+}
+
+
+.school-btns {
+    max-width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    margin: 100px auto 120px;
+    
+    @include mq("sp") {
+        display: block;
+        margin-bottom: 60px;
+    }
+}
+
+.school__btn {
+    display: block;
+    width: 350px;
+    max-width: 100%;
+    height: 100px;
+
+    @include mq("sp") {
+        margin: 0 auto;
+
+        &:nth-child(2) {
+            margin-top: 24px;
+        }
+    }
+
+    &:hover {
+        opacity: .8;
+    }
+}
+.school__btnImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

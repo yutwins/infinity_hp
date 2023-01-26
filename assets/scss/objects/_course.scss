@@ -1,0 +1,294 @@
+@use "../foundation/global" as *;
+
+.course {
+
+    &-inner {
+        padding: 120px 0;
+
+        @media (max-width: 850px) {
+            padding: 60px 0;
+        }
+    }
+
+    &-items {
+        margin-top: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 80px;
+
+        @include mq("tab") {
+            gap: 32px;
+        }
+        @media (max-width: 850px) {
+            display: block;
+        }
+    }
+
+    &-item {
+        width: 450px;
+        height: auto;
+        min-height: 800px;
+        border-radius: 10px;
+        overflow: hidden;
+        border: 1px solid $gray02_color;
+        box-shadow: 0 4px 8px rgba(#000, .25);
+        
+        @include mq("tab") {
+            width: 400px;
+            min-height: 780px;
+        }
+        @media (max-width: 850px) {
+            height: auto;
+            min-height: 0;
+            margin: 0 auto;
+            padding-bottom: 20px;
+        }
+        @include mq("sp") {
+            width: 335px;
+            
+        }
+
+        &__titleArea {
+            width: 100%;
+            height: 260px;
+            position: relative;
+
+            @include mq("sp") {
+                height: 195px;
+            }
+
+            &::before,
+            &::after {
+                content: "";
+                display: block;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            &::after {
+                background: rgba(#000, .25);
+            }
+        }
+        &__title {
+            font-size: 40px;
+            font-weight: bold;
+            color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            white-space: nowrap;
+            z-index: 2;
+
+            @media (max-width: 850px) {
+                font-size: 32px;
+            }
+        }
+
+        &__head {
+            margin-top: 20px;
+            font-size: 20px;
+            line-height: 1.4;
+            font-weight: bold;
+            text-align: center;
+
+            @include mq("tab") {
+                font-size: 18px;
+            }
+            @include mq("sp") {
+                font-size: 16px;
+            }
+        }
+    }
+
+    &-elementary {
+        text-align: center;
+
+        &__titleArea {
+            &::before {
+                background: url(/assets/images/course_img01.png) no-repeat center center / cover;
+            }
+        }
+
+        &__imgArea {
+            height: auto;
+        }
+        &__habitImg {
+            // width: 400px;
+            margin: 32px 0;
+            width: 90%;
+            vertical-align: bottom;
+
+            @media (max-width: 850px) {
+                margin: 14px 0;
+                width: 84%;
+            }
+        }
+
+        &__arrow {
+            width: 35px;
+            height: 35px;
+            margin: 8px 0;
+            vertical-align: bottom;
+
+            @media (max-width: 850px) {
+                width: 30px;
+                height: 30px;
+                margin: 12px 0;
+            }
+        }
+
+        &__upper,
+        &__bottom {
+            // width: 380px;
+            width: 84.4%;
+            margin: 0 auto;
+            border: 1px solid #000;
+            padding: 7px 0;
+        }
+        &__upperHead,
+        &__bottomHead {
+            font-size: 20px;
+            font-weight: bold;
+
+            @media (max-width: 850px) {
+                font-size: 18px;
+            }
+        }
+        &__upperText,
+        &__bottomText {
+            margin-top: 6px;
+            font-weight: 500;
+
+            @include mq("tab") {
+                font-size: 15px;
+            }
+            @media (max-width: 850px) {
+                font-size: 13px;
+            }
+        }
+
+        &__upperUl,
+        &__bottomUl {
+            margin-top: 7px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        &__upperList,
+        &__bottomList {
+            padding-left: 7px;
+            font-size: 12px;
+            position: relative;
+
+            @include mq("sp") {
+                font-size: 10px;
+            }
+
+            &::before {
+                content: "";
+                display: block;
+                width: 3px;
+                height: 3px;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                background-color: #000;
+                border-radius: 50%;
+            }
+
+            &--etc {
+                margin-left: 5px;
+            }
+        }
+    }
+
+ 
+    &-juniorHigh {
+
+        @media (max-width: 850px) {
+            margin-top: 64px;
+        }
+
+        &__titleArea {
+
+            &::before {
+                background: url(/assets/images/course_img02.png) no-repeat center center / cover;
+            }
+        }
+
+        &__subHead {
+            margin-top: 24px;
+            font-size: 18px;
+            font-weight: bold;
+            color: $main_color;
+            text-align: center;
+
+            @media (max-width: 850px) {
+                font-size: 15px;
+            }
+        }
+
+        &__arrow {
+            width: 35px;
+            height: 35px;
+            display: block;
+            margin: 2px auto;
+            
+            @media (max-width: 850px) {
+                width: 30px;
+                height: 30px;
+                margin: 12px auto;
+            }
+        }
+
+        &__items {
+            width: 73.3%;
+            margin: 0 auto;
+
+            @include mq("tab") {
+                width: 80%;
+            }
+            @include mq("sp") {
+                width: 85%;
+            }
+        }
+
+        &__item {
+            padding-left: 40px;
+            font-weight: bold;
+            position: relative;
+
+            @include mq("tab") {
+                font-size: 15px;
+            }
+            @include mq("sp") {
+                font-size: 12px;
+            }
+
+            @for $i from 2 through 5 {
+                &:nth-child(#{$i}) {
+                    margin-top: 20px;
+                }
+            }
+        }
+        &__itemIcon {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+
+            @media (max-width: 850px) {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
+}

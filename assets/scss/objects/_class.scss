@@ -1,0 +1,140 @@
+@use "../foundation/global" as *;
+
+.class {
+ 
+    &-inner {
+        padding-top: 120px;
+        padding-bottom: 100px;
+
+        @include mq("tab") {
+            padding-top: 100px;
+            padding-bottom: 80px;
+        }
+        @include mq("sp") {
+            padding-top: 60px;
+            padding-bottom: 60px;
+        }
+    }
+
+    &__subtitle {
+        margin-top: 8px;
+        font-size: 20px;
+        font-weight: 500;
+        text-align: center;
+
+        @include mq("sp") {
+            font-size: 14px;
+        }
+    }
+
+    &-items {
+        width: 720px;
+        margin: 64px auto 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 80px;
+        flex-wrap: wrap;
+
+        @include mq("sp") {
+            display: block;
+            width: 100%;
+            margin-top: 24px;
+        }
+    }
+
+    &-item {
+        width: 320px;
+        height: auto;
+        border: 1px solid $gray02_color;
+        box-shadow: 0 4px 8px rgba(#000, .25);
+
+        @include mq("sp") {
+            width: 315px;
+            margin: 0 auto;
+
+            &:not(:first-child) {
+                margin-top: 32px;
+            }
+        }
+
+        &__imgArea {
+            width: 100%;
+            height: 200px;
+        }
+        &__img {
+            width: 100%;
+            height: 100%;
+        }
+
+        &__container {
+            padding: 12px 0 24px 0;
+        }
+
+        &__head {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+        &__subhead {
+            margin-top: 5px;
+            font-size: 12px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        &__subject {
+            width: 240px;
+            margin: 14px auto 0;
+        }
+        &__subjectTag {
+            display: inline-block;
+            padding: 1px 18px;
+            background-color: $gray02_color;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 500;
+        }
+        &__subjectList {
+            margin-top: 14px;
+        }
+        &__subjectListItem {
+            font-size: 14px;
+            font-weight: 500;
+            padding-left: 13px;
+            position: relative;
+
+            &::before {
+                content: "";
+                display: block;
+                width: 8px;
+                height: 8px;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                border-radius: 50%;
+                background-color: $gray02_color;
+            }
+        }
+
+        &__btn {
+            width: 180px;
+            height: 45px;
+            display: grid;
+            place-items: center;
+            margin: 24px auto 0;
+            background-color: $main_color;
+            box-shadow: 0 4px 4px rgba(#000, .25);
+
+            &:hover {
+                box-shadow: none;
+                opacity: .8;
+            }
+        }
+        &__btnText {
+            color: #fff;
+            font-weight: bold;
+        }
+    }
+}

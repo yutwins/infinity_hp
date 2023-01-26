@@ -16,3 +16,9 @@ Foundation - ファウンデーション
 /* ========================================================================
 	Objects - オブジェクト
 ======================================================================== */
+@use "objects/top" as *;
+@use "objects/subject" as *;
+@use "objects/course" as *;
+@use "objects/feature" as *;
+@use "objects/class" as *;
+@use "objects/news" as *;
